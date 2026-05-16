@@ -1,0 +1,15 @@
+[{
+  "Name": "indent",
+  "Description": "Indent the next line if current line matches a pattern",
+  "Website": "https://github.com/Jenny-hso/indent",
+  "Tags": [],
+  "Versions": [
+    {
+      "Version": "1.0.0",
+      "Url": "https://github.com/Jenny-hso/indent/archive/v1.0.0.zip",
+      "Require": {
+        "micro": ">=2.0.0"
+      }
+    }
+  ]
+}]
