@@ -11,11 +11,7 @@ function preInsertNewline(bp)
       return true
    end
 
-   local line = bp.Buf:Line(bp.Cursor.Y)
-
-   if bp.Cursor.X < #line then
-      return true
-   end
+   local line = bp.Buf:Line(bp.Cursor.Y):sub(1, bp.Cursor.X)
 
    local matched, err = regexp.MatchString(regex, line)
 
