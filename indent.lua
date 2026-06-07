@@ -58,5 +58,5 @@ end
 function preinit()
    config.RegisterCommonOption("indent", "regex", "")
    config.RegisterCommonOption("indent", "unless", "")
-   -- config.AddRuntimeFile("indent", config.RTHelp, "help/indent.md")
+   config.AddRuntimeFile("indent", config.RTHelp, "README.md")
 end
