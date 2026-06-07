@@ -7,6 +7,7 @@ Autoindent a new line if a current one matches a Go regular expression.
 To install the plugin, clone this repository to your `.config/micro/plug/` via `git clone https://github.com/Jenny-hso/micro-indent`.
 
 Alternatively, you may install it via [the unofficial micro plugin channel](https://github.com/Neko-Box-Coder/unofficial-plugin-channel):
+
 1. Add the unofficial channes to your channels list:
 ```
 // settings.json
@@ -16,6 +17,7 @@ Alternatively, you may install it via [the unofficial micro plugin channel](http
     ]
 }
 ```
+
 2. Install:
 ```bash
 $ micro -plugin install indent
@@ -25,7 +27,7 @@ $ micro -plugin install indent
 
 To use the plugin, set the `indent.regex` setting in your `settings.json` to a non-empty regular expression:
 
-Here's an example for Python 3:
+These settings will result in indenting all lines that end with a colon:
 ```json
 "ft:python": {
    "indent.regex": ":$"
@@ -40,6 +42,9 @@ These settings will result in not indenting comments:
    "indent.unless": "^#"
 }
 ```
+
+> [!NOTE]
+> `indent` matches only the part of the line before the cursor instead of the entire line.
 
 ## License
 
