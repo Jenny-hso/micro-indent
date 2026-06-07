@@ -24,6 +24,23 @@ function shouldIndent(bp)
       return false
    end
 
+   local unless_regex = bp.Buf.Settings["indent.unless"]
+
+   if unless_regex == "" then
+      return true
+   end
+
+   local matched_unless, err = regexp.MatchString(unless_regex, line)
+
+   if err ~= nil then
+      micro.InfoBar():Error(err)
+      return false
+   end
+
+   if matched_unless then
+      return false
+   end
+
    return true
 end
 
@@ -40,5 +57,6 @@ end
 
 function preinit()
    config.RegisterCommonOption("indent", "regex", "")
+   config.RegisterCommonOption("indent", "unless", "")
    -- config.AddRuntimeFile("indent", config.RTHelp, "help/indent.md")
 end

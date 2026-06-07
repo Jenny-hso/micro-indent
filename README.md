@@ -32,6 +32,15 @@ Here's an example for Python 3:
 }
 ```
 
+Additionally, you may specify when to NOT indent a new line. To do this, set the `indent.unless` option to a valid Go regular expression:
+
+These settings will result in not indenting comments:
+```json
+"ft:python": {
+   "indent.unless": "^#"
+}
+```
+
 ## License
 
 This plugin is licensed under CC0-1.0. For details, see [LICENSE](LICENSE).
